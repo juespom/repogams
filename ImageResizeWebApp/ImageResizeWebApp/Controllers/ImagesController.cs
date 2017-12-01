@@ -47,7 +47,7 @@ namespace ImageResizeWebApp.Controllers
 
                 if (storageConfig.ImageContainer == string.Empty)
 
-                    return BadRequest("Please provide a name for your image container in the azure blob storage");
+                    return BadRequest("Please provide a name for your file container in the azure blob storage");
 
                 foreach (var formFile in files)
                 {
@@ -79,7 +79,7 @@ namespace ImageResizeWebApp.Controllers
                 }
                 else
 
-                    return BadRequest("Look like the image couldnt upload to the storage");
+                    return BadRequest("Look like the file couldnt upload to the storage");
 
 
             }
@@ -102,7 +102,7 @@ namespace ImageResizeWebApp.Controllers
 
                 if (storageConfig.ImageContainer == string.Empty)
 
-                    return BadRequest("Please provide a name for your image container in the azure blob storage");
+                    return BadRequest("Please provide a name for your file container in the azure blob storage");
 
                 List<string> thumbnailUrls = await StorageHelper.GetThumbNailUrls(storageConfig);
 
